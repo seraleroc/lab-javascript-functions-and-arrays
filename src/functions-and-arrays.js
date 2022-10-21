@@ -319,7 +319,43 @@ const matrix = [
   ],
 ];
 
-function greatestProduct() {}
+function greatestProduct(array) {
+  let product = 0;
+  for (let i = 0; i < array.length; i++) {
+    let row = array[i];
+    for (let j = 0; j < row.length; j++) {
+      if (row[j + 4] === undefined || array[i + 4][j] === undefined) return;
+      else {
+        let product1 = row[j] * row[j + 1] * row[j + 2] * row[j + 3];
+        let product2 =
+          array[i][j] * array[i + 1][j] * array[i + 3][j] * array[i + 3][j];
+        if (product1 > product) product = product1;
+        if (product2 > product) product = product2;
+        return product;
+      }
+    }
+  }
+}
+
+console.log(greatestProduct(matrix));
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 // The following is required to make unit tests work.
 /* Environment setup. Do not modify the below code. */
