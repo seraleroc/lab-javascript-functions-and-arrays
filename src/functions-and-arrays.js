@@ -232,15 +232,21 @@ const wordsCount = [
   "matter",
 ];
 
-function howManyTimes(wordsCount, search) {
-  if(wordsCount.length === 0) return false
-  let counter = 0;
-  wordsCount.forEach((word, i) => {
-    if(search===word){
-      counter += 1;
+function howManyTimes(array, word) {
+  if(!array.length){
+    return 0
+  }
+
+  var wordCount = 0;
+  if(array.length > 0){
+    for(let i = 0; i < array.length ; i++){
+      if (array[i] === word){
+        wordCount += 1
+      }
     }
-  })
-  return counter;
+    return wordCount;
+  }
+    return false;
 }
 
 
